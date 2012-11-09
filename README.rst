@@ -66,6 +66,7 @@ Push source:
 Translations:
 
 ``tx push -t``
+
 One translation:
 
 ``tx push -t -l LANG_CODE``
