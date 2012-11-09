@@ -174,6 +174,11 @@ class Project(object):
             resource, 'file_filter',
             file_filter % info
         )
+        # Adofex: set source_file and source_lang automatically
+        self.config.set(resource, 'source_file',
+            (file_filter % info).replace('<lang>', 'en-US'))
+        self.config.set(resource, 'source_lang', 'en-US')
+
         if host != self.config.get('main', 'host'):
             self.config.set(resource, 'host', host)
 
