@@ -344,12 +344,15 @@ class Project(object):
         self.minimum_perc = minimum_perc
         resource_list = self.get_chosen_resources(resources)
 
+	# Adofex aliases and added skipped mode
         if mode == 'reviewed':
             url = 'pull_reviewed_file'
-        elif mode == 'translator':
+        elif mode in ('translator', 'empty'):
             url = 'pull_translator_file'
-        elif mode == 'developer':
+        elif mode in ('developer', 'replaced'):
             url = 'pull_developer_file'
+        elif mode == 'skipped':
+            url = 'pull_skipped_file'
         else:
             url = 'pull_file'
 

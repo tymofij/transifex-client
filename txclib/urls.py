@@ -9,6 +9,7 @@ API_URLS = {
     'pull_reviewed_file': '%(hostname)s/api/2/project/%(project)s/resource/%(resource)s/translation/%(language)s/?file&mode=reviewed',
     'pull_translator_file': '%(hostname)s/api/2/project/%(project)s/resource/%(resource)s/translation/%(language)s/?file&mode=translated',
     'pull_developer_file': '%(hostname)s/api/2/project/%(project)s/resource/%(resource)s/translation/%(language)s/?file&mode=default',
+    'pull_skipped_file': '%(hostname)s/projects/p/%(project)s/resource/%(resource)s/l/%(language)s/download/skipped/', # Adofex
     'resource_stats': '%(hostname)s/api/2/project/%(project)s/resource/%(resource)s/stats/',
     'create_resource': '%(hostname)s/api/2/project/%(project)s/resources/',
     'push_source': '%(hostname)s/api/2/project/%(project)s/resource/%(resource)s/content/',
