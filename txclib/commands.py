@@ -127,7 +127,7 @@ def cmd_set(argv, path_to_tx):
             url = args[0]
         except IndexError:
             parser.error("Please specify an remote url")
-        _auto_remote(path_to_tx, url)
+        _auto_remote(path_to_tx, url, options.file_filter)
         _set_minimum_perc(options.resource, options.minimum_perc, path_to_tx)
         _set_mode(options.resource, options.mode, path_to_tx)
         return
@@ -255,7 +255,7 @@ def _auto_local(path_to_tx, resource, source_language, expression, execute=False
         prj.save()
 
 
-def _auto_remote(path_to_tx, url):
+def _auto_remote(path_to_tx, url, file_filter):
     """
     Initialize a remote release/project/resource to the current directory.
     """
@@ -307,7 +307,9 @@ def _auto_remote(path_to_tx, url):
             resource=resource,
             host = vars['hostname'],
             source_lang = source_lang,
-            i18n_type = i18n_type)
+            i18n_type = i18n_type,
+            file_filter = file_filter,
+            info = res_info)
 
     prj.save()
 

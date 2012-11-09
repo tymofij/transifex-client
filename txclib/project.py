@@ -153,7 +153,7 @@ class Project(object):
         return username, passwd
 
     def set_remote_resource(self, resource, source_lang, i18n_type, host,
-            file_filter="translations<sep>%(proj)s.%(res)s<sep><lang>.%(extension)s"):
+            file_filter, info):
         """
         Method to handle the add/conf of a remote resource.
         """
@@ -168,11 +168,11 @@ class Project(object):
             'resource': r_slug
         }
         extension = self._extension_for(i18n_type)[1:]
-
+        info.update({'proj': p_slug, 'res': r_slug, 'extension': extension})
         self.config.set(resource, 'source_lang', source_lang)
         self.config.set(
             resource, 'file_filter',
-            file_filter % {'proj': p_slug, 'res': r_slug, 'extension': extension}
+            file_filter % info
         )
         if host != self.config.get('main', 'host'):
             self.config.set(resource, 'host', host)

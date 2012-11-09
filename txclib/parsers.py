@@ -199,6 +199,12 @@ def set_parser():
             "in order to download it."
         )
     )
+    parser.add_option("--file-filter", action="store", dest="file_filter",
+        default="translations<sep>%(proj)s.%(res)s<sep><lang>.%(extension)s",
+        help=(
+            "Specify directory schema for resources"
+        )
+    )
     parser.add_option(
         "--mode", action="store", dest="mode", help=(
             "Specify the mode of the translation file to pull (e.g. "
