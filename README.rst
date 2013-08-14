@@ -1,4 +1,3 @@
-
 =============================
  Transifex Command-Line Tool
 =============================
@@ -53,7 +52,7 @@ Pull some locale
 
 ``tx pull -l LANG_CODE``
 
-While pulling you can specify download mode as --mode=skip (empty or replace).
+While pulling you can specify download mode as --mode=skipped (empty or replaced).
 Replace is the default one. Be sure not to download and then push replaced translations.
 They will be marked as 100% translated then.
 
